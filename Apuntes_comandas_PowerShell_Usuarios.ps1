@@ -109,5 +109,20 @@ New-ADUser -Name user11 `
            -Path "OU=UNITAT1,DC=jtoribio,DC=cat" `
            -ChangePasswordAtLogon $true `
            -EmailAddress rjurado@pepe.yoquese.net
+
+# creamos un usuario que pot iniciar sesion en un equip en concret
+New-ADUser -Name user12 `
+           -SamAccountName user12 `
+           -UserPrincipalName user12@jtoribio.cat `
+           -Enabled $true `
+           -AccountPassword (ConvertTo-SecureString "P@ssw0rd" -AsPlainText -Force) `
+           -GivenName carlos `
+           -Surname "alcalaz" `
+           -DisplayName "carlos alcalaz" `
+           -Initials CA `
+           -Path "OU=UNITAT1,DC=jtoribio,DC=cat" `
+           -ChangePasswordAtLogon $true `
+           -LogonWorkstations "t1,t2,t3" `
+           -EmailAddress rjurado@pepe.yoquese.net
            
            
